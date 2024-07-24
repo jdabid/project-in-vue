@@ -1,18 +1,17 @@
 <template>
-  <section>
-    <h3>Counter: {{counter}}</h3>
-    <h3>Square: {{squareCounter}}</h3>
+  <h1 className="text-3xl font-bold underline">
+    Aqui tienes una app de vue
+  </h1>
+  <hr>
 
-    <button @click="counter++">+1</button>
-    <button @click="counter--">-1</button>
-  </section>
+  <MyCounter :value="1"></MyCounter>
+  <MyCounterScript :value="2"></MyCounterScript>
+  <MyCounterScript2 :value="3"></MyCounterScript2>
 </template>
 
 <script setup lang="ts">
-
-import { computed, ref } from 'vue';
-
-const counter = ref(2);
-const squareCounter = computed(()=> counter.value * counter.value);
+import MyCounter from '@/components/MyCounter.vue';
+import MyCounterScript from '@/components/MyCounterScript.vue';
+import MyCounterScript2 from '@/components/my-counter-script/MyCounterScript2.vue';
 </script>
 
